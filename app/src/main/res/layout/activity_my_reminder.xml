@@ -21,16 +21,18 @@
         android:id="@+id/button_add"
         android:layout_alignParentRight="true"
         android:text="Add"
+        android:onClick="append_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <EditText
+    <TextView
         android:id="@+id/display_reminder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/button_add"
         android:inputType="textMultiLine"
+        android:gravity="top"
+        android:editable="false"
         android:hint="Your reminders"/>
-
 
 </RelativeLayout>

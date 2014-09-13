@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MyReminder extends Activity {
@@ -14,12 +16,6 @@ public class MyReminder extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_reminder);
-
-        String vvMessage = "This is a test";
-        Intent intent = new Intent(this, MyReminder.class);
-        EditText editReminderText = (EditText) findViewById(R.id.display_reminder);
-        editReminderText.setText(vvMessage);
-
     }
 
 
@@ -40,5 +36,12 @@ public class MyReminder extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void append_text(View view){
+        EditText reminderText = (EditText) findViewById(R.id.reminder_input);
+        TextView displayText = (TextView) findViewById(R.id.display_reminder);
+        displayText.append("\u2022 " + reminderText.getText().toString() + System.getProperty("line.separator"));
+        reminderText.setText("");
     }
 }
