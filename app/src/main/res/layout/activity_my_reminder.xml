@@ -24,12 +24,46 @@
         android:onClick="append_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+   <EditText
+       android:id="@+id/date_value"
+       android:text="Set date"
+       android:layout_below="@+id/button_add"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
+    <ImageButton
+        android:id="@+id/date_picker"
+        android:src="@android:drawable/ic_menu_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_add"
+        android:layout_toRightOf="@+id/date_value"
+        android:text="Date"
+        android:onClick="setDatePickerDialog"/>
+
+   <EditText
+       android:id="@+id/time_value"
+       android:text="Set Time"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/button_add"
+       android:layout_toRightOf="@+id/date_picker"
+       />
+    <ImageButton
+        android:id="@+id/time_picker"
+        android:src="@android:drawable/ic_lock_idle_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/time_value"
+        android:layout_below="@+id/button_add"
+        android:text="Time"
+        android:onClick="setTimePickerDialog"
+        />
 
     <TextView
         android:id="@+id/display_reminder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/button_add"
+        android:layout_below="@+id/date_picker"
         android:inputType="textMultiLine"
         android:gravity="top"
         android:editable="false"
